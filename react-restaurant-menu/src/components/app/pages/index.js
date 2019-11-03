@@ -6,3 +6,5 @@ export { default as App } from "./menu-maker";
 export { default as HomeUser } from "./HomeUser";
 export { default as Categories} from './categories-maker';
 export { default as PaymentsHome } from "./PaymentsHome";
+export { default as SuggestionsHome } from "./SuggestionsHome";
+export { default as FeedbackHome } from "./FeedbackHome";

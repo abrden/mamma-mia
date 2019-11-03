@@ -1,5 +1,6 @@
 import {
-    SignUp, Login, Register, Home, App, HomeUser, Categories, PaymentsHome
+    SignUp, Login, Register, Home, App, HomeUser, Categories, PaymentsHome, SuggestionsHome, 
+    FeedbackHome
   } from "../../components/app/pages/index.js";
   
   
@@ -21,6 +22,13 @@ import {
     {
       path: "/payments",
       component: PaymentsHome,
+      exact: true,
+      redirectTo: '/'
+    },
+
+    {
+      path: "/suggestions",
+      component: FeedbackHome,
       exact: true,
       redirectTo: '/'
     },
