@@ -18,7 +18,7 @@ export default class CourseItem extends Component {
       htmlTitle: this.props.itemTitle,
       htmlDescription: this.props.itemDescription,
       htmlPrice: this.props.itemPrice,
-      //categoryID: this.props.id,
+      categoryID: this.props.category_id,
       editable: false,
       deleted: false
     };

@@ -9,12 +9,12 @@ export default class App extends Component {
     console.log("cargue App");
     super(props)
     this.state = {
-      course: 0,
+      course: "0",
       summary: false
     }
   }
 
-  handleCourse = (course = 0) => {
+  handleCourse = (course = "0") => {
     this.setState({ course })
   }
 

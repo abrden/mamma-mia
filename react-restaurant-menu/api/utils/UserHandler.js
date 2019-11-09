@@ -5,6 +5,8 @@ const crypter = require('bcrypt');
 const SALT_ROUNDS = 10
 const USERS_DIR = "./data/users/users_database.json"
 const FEEDBACKS_DIR = "./data/saved_messages/messages_of_feedback.json"
+const CATEGORIES_DIR = "src/assets/data/categories.json"
+const crypto = require("crypto");
 
 class UserHandler {
 
@@ -71,6 +73,34 @@ class UserHandler {
         fs.writeFileSync(FEEDBACKS_DIR, JSON.stringify(messagesJson));
 
         return { "status": 200, "message": "Comentario registrado exitosamente." };
+	}
+
+	static getCategories() {
+		let categories = fs.readFileSync(CATEGORIES_DIR);
+		let categoriesJson = JSON.parse(categories);
+		return categoriesJson;
+	}
+
+	static saveCategory(category_id, name) {
+		let categoriesJson = this.getCategories();
+		if (category_id == null){
+			category_id = crypto.randomBytes(16).toString("hex"); //Creo un nuevo ID unico para la categoria
+			categoriesJson[category_id] = name;
+		}
+		else{
+			categoriesJson[category_id] = name;
+		}
+		fs.writeFileSync(CATEGORIES_DIR, JSON.stringify(categoriesJson));
+
+		return { "status": 200, "message": "Categoria guardada exitosamente.", "category_id":category_id };
+	}
+
+	static deleteCategory(category_id){
+		let categoriesJson = this.getCategories();
+		delete categoriesJson[category_id];
+		fs.writeFileSync(CATEGORIES_DIR, JSON.stringify(categoriesJson));
+
+		return { "status": 200, "message": "Categoria borrada exitosamente." };
 	}
 }
 

@@ -1,6 +1,6 @@
 [
     {
-        "courseType": [0],
+        "category_id": "0",
         "id": 0,
         "title": "Grilled Vegetable Bruschetta",
         "description": "What could be more summery than grilled peppers and squash heaped on toasted country bread that's slathered with fresh basil pesto?",
@@ -8,7 +8,7 @@
         "price": 30.00
     },
     {
-        "courseType": [0],
+        "category_id": "0",
         "id": 1,
         "title": "Zucchini-and-Pepper Gratin with Herbs and Cheese",
         "description": "Pleasantly salty Sbrinz to top a gratin made with a ratatouille-like mix of sautéed zucchini strips, bell peppers and tomato.",
@@ -16,7 +16,7 @@
         "price": 30.00
     },
     {
-        "courseType": [0],
+        "category_id": "0",
         "id": 2,
         "title": "Scallop Ceviche with Aguachile",
         "description": "Aguachile (chile water) is a vibrant sauce made with fresh chiles, herbs and cucumbers that’s fantastic on any type of fish or shellfish. ",
@@ -24,7 +24,7 @@
         "price": 45.00
     },
     {
-        "courseType": [0],
+        "category_id": "0",
         "id": 3,
         "title": "Roast Beef Summer Rolls",
         "description": "Vietnamese summer rolls are often filled with or shrimp, but Grace Parisi makes hers with roast beef from the deli.",
@@ -32,7 +32,7 @@
         "price": 45.00
     },
     {
-        "courseType": [0],
+        "category_id": "0",
         "id": 4,
         "title": "Grilled Tomato Crostini",
         "description": "Lightly golden brown toast with tomato.",
@@ -40,7 +40,7 @@
         "price": 0
     },
     {
-        "courseType": [0],
+        "category_id": "0",
         "id": 5,
         "title": "Pickled Shrimp with Creamy Spinach Dip",
         "description": "James Holmes grew up in Texas but didn't learn how to make pickled shrimp, a Gulf specialty, until he took a job at a New York City restaurant",
@@ -48,7 +48,7 @@
         "price": 3
     },
     {
-        "courseType": [1],
+        "category_id": "1",
         "id": 6,
         "title": "Tomato Soup with Feta, Olives and Cucumbers",
         "description": "This pretty, fresh-tasting tomato soup is David Chang’s riff on Greek salad: He tops it with tomatoes, olives, honeyed cucumbers and feta.",
@@ -56,7 +56,7 @@
         "price": 0
     },
     {
-        "courseType": [1],
+        "category_id": "1",
         "id": 7,
         "title": "Miso Soup with Turmeric and Tofu",
         "description": "Miso soup gets re-imagined by blogger Heidi Swanson, who adds earthy, brilliant yellow turmeric for additional flavor and color.",
@@ -64,7 +64,7 @@
         "price": 0
     },
     {
-        "courseType": [1],
+        "category_id": "1",
         "id": 8,
         "title": "Mint and Pea Soup",
         "description": "Mint gives this soup a wonderfully fresh taste, and it makes a perfect lunch with some bread and cheese on the side.",
@@ -72,7 +72,7 @@
         "price": 0
     },
     {
-        "courseType": [1],
+        "category_id": "1",
         "id": 9,
         "title": "Tomato Water Gazpacho",
         "description": "The base of it is built on the tomato seeds and pulp, plus the brine of pickled green tomatoes, from an elegant amuse-bouche of Tomato and Watermelon Bites.",
@@ -80,7 +80,7 @@
         "price": 1
     },
     {
-        "courseType": [1,2],
+        "category_id": "1",
         "id": 10,
         "title": "Lobster Bisque",
         "description": "Lobster shells from the tail, claws, knuckles, and legs are full of flavor and, when very gently simmered in water, yield a clean-tasting, briny stock.",
@@ -88,7 +88,7 @@
         "price": 0
     },
     {
-        "courseType": [2],
+        "category_id": "2",
         "id": 11,
         "title": "Seared Salmon with Summer Vegetables",
         "description": "The myriad vegetables in the recipe—corn, spinach, shiitakes, and tomato—sing of late summer.",
@@ -96,7 +96,7 @@
         "price": 0
     },
     {
-        "courseType": [2],
+        "category_id": "2",
         "id": 12,
         "title": "Arctic Char with Soba and Green Beans",
         "description": "A very refreshing and bright soba noodle salad with green beans, radishes, romaine and fresh basil, and serves it with perfectly crisp pieces of arctic char.",
@@ -104,7 +104,7 @@
         "price": 0
     },
     {
-        "courseType": [2],
+        "category_id": "2",
         "id": 13,
         "title": "Salmon Yakitori",
         "description": "A soy sauce, mirin, and brown sugar glaze caramelizes on the fish and baby bok choy as it grills, and also serves as a dipping sauce.",
@@ -112,7 +112,7 @@
         "price": 0
     },
     {
-        "courseType": [2],
+        "category_id": "2",
         "id": 14,
         "title": "Crab and Smoked Salmon Pintxos with Vanilla Oil",
         "description": "These delightful pintxos combine a lemony fresh crab salad with smoked salmon and salty pops of salmon roe.",
@@ -120,7 +120,7 @@
         "price": 0
     },
     {
-        "courseType": [3],
+        "category_id": "3",
         "id": 15,
         "title": "Spinach Salad with Ginger-Soy Dressing",
         "description": "Fresh ginger warms up the soy-citrus dressing in this hearty spinach salad from New York chef JJ Johnson",
@@ -128,7 +128,7 @@
         "price": 1
     },
     {
-        "courseType": [3],
+        "category_id": "3",
         "id": 16,
         "title": "Classic Caesar Salad",
         "description": "This classic Caesar salad is loaded with plenty of garlic, anchovies and Parmigiano cheese. It's also fast and easy to make.",
@@ -136,7 +136,7 @@
         "price": 0
     },
     {
-        "courseType": [3],
+        "category_id": "3",
         "id": 17,
         "title": "Mixed Greens with Poached Eggs, Hazelnuts and Spices",
         "description": "At L'Arcangelo restaurant in Rome, chef Arcangelo Dandini makes this simple salad with whichever wild greens happen to be in season at the moment.",
@@ -144,7 +144,7 @@
         "price": 1
     },
     {
-        "courseType": [3],
+        "category_id": "3",
         "id": 18,
         "title": "Butter Lettuce Salad with Tomato Vinaigrette",
         "description": "This delicious roasted-tomato vinaigrette is enhanced with blue cheese, which makes the dressing extra-thick and rich.",
@@ -152,7 +152,7 @@
         "price": 0
     },
     {
-        "courseType": [3],
+        "category_id": "3",
         "id": 19,
         "title": "Shrimp Salad with Green Curry Dressing",
         "description": "Green curry paste is the secret ingredient in this supersimple, bright and crunchy shrimp salad recipe from F&W’s Justin Chapple.",
@@ -161,7 +161,7 @@
     },
 
     {
-        "courseType": [4],
+        "category_id": "4",
         "id": 20,
         "title": "Piri Piri Chicken",
         "description": "This riff on the piri piri marinade balances the heat of fresh chiles with sweet bell pepper, garlic, and a splash of tangy red wine vinegar.",
@@ -169,7 +169,7 @@
         "price": 4
     },
     {
-        "courseType": [4],
+        "category_id": "4",
         "id": 21,
         "title": "Mojo Pork Steak with Seared Avocados and Oranges",
         "description": "Chiles, citrus, and garlic make up the classic mojo rub for this family-size blade steak, cut from the pork shoulder.",
@@ -177,7 +177,7 @@
         "price": 0
     },
     {
-        "courseType": [4],
+        "category_id": "4",
         "id": 22,
         "title": "Steak and Brassicas with Red Wine Sauce",
         "description": "The brassicas here include baby cauliflower, cute 2- to 4-inch heads that come in vibrant colors like green, orange and purple as well as the usual ivory.",
@@ -185,7 +185,7 @@
         "price": 0
     },
     {
-        "courseType": [4],
+        "category_id": "4",
         "id": 23,
         "title": "Brisket with Sweet-and-Sour Onions",
         "description": "This brisket recipe is from Jessamyn Rodriguez, the founder and CEO of Hot Bread Kitchen, the New York–based social enterprise that helps immigrant women and others launch careers and food businesses.",
@@ -193,7 +193,7 @@
         "price": 0
     },
     {
-        "courseType": [4],
+        "category_id": "4",
         "id": 24,
         "title": "Veal Roast with Green Mashed Potatoes",
         "description": "Chef Eli Dahlin of Dame in Portland, Oregon, uses this “backwards” mashed potato technique for entertaining.",
@@ -201,7 +201,7 @@
         "price": 0
     },
     {
-        "courseType": [5],
+        "category_id": "5",
         "id": 25,
         "title": "Strawberry Almond Cheesecake with Matzoh Crust",
         "description": "This silky cheesecake gets sweetness and tang from a blend of cream cheese and sour cream.",
@@ -209,7 +209,7 @@
         "price": 0
     },
     {
-        "courseType": [5],
+        "category_id": "5",
         "id": 26,
         "title": "Apple Tart with Apricot Glaze",
         "description": "This tart is the final dish in a dinner party menu designed by Stitt and inspired by Olney’s love of seasonal produce and great wine.",
@@ -217,7 +217,7 @@
         "price": 0
     },
     {
-        "courseType": [5],
+        "category_id": "5",
         "id": 27,
         "title": "Classic French Macarons",
         "description": "French macarons (made with almond flour, and distinct from their coconut cousins, macaroons) require some practice and patience.",
@@ -225,7 +225,7 @@
         "price": 0
     },
     {
-        "courseType": [5],
+        "category_id": "5",
         "id": 28,
         "title": "Ultimate Chocolate Mousse",
         "description": "This is the ultimate, the definitive, the ne plus ultra, the finest chocolate mousse creation ever whipped up.",
@@ -233,7 +233,7 @@
         "price": 0
     },
     {
-        "courseType": [5],
+        "category_id": "5",
         "id": 29,
         "title": "Brown Sugar Cake with Ricotta and Blueberries",
         "description": "The chewy, dense confection is like a cross between a cake and a blondie. It’s delicious both by itself and dressed up with Ricotta Mousse and Blueberry Sauce.",

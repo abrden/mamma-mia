@@ -25,6 +25,7 @@ export default class CourseContainer extends Component {
 
   fetchData = () => {
     const jsonData = require("../../../../assets/data/fe-tech-data.json")
+    console.log(this.props.course)
     const courseItems = getCourseItems(jsonData, this.props.course)
 
     this.setState({
