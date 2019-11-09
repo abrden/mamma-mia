@@ -26,8 +26,9 @@ export default class App extends Component {
     return (
       <main className="app">
         <h1 className="title">
-          {this.state.summary ? "Your order: " : "Restaurant Menu"}
+          {this.state.summary ? "Today's Set Menu: " : "Mamma mia! - Create Set Menu"}
         </h1>
+        <p>{this.state.summary ? "Our new combination of courses made with love for you. Includes beverages" : "Select the courses you want for today's set menu"}</p>
         <Steps
           {...this.state}
           changeCourse={this.handleCourse}

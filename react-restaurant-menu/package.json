@@ -18,7 +18,8 @@
     "react-image": "^2.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.0.1",
-    "superagent": "^5.1.0"
+    "superagent": "^5.1.0",
+    "eslint-plugin-react": "^7.16.0"
   },
   "scripts": {
     "start": "react-scripts start & node ./api/controller/app.js",
@@ -40,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-plugin-react": "^7.16.0"
   }
 }

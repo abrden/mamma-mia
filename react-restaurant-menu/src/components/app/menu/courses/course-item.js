@@ -61,8 +61,9 @@ export default class CourseItem extends Component {
           <h6 value={this.state.htmlTitle} onChange={this.handleTitleChange}/>
           <ContentEditable className={!this.state.editable ? "" : "editable"} html={this.state.htmlDescription} disabled={!this.state.editable} onChange={this.handleDescriptionChange} />
           <p value={this.state.htmlDescription} onChange={this.handleDescriptionChange}/>
-          <ContentEditable className={!this.state.editable ? "" : "editable"} html={"Price: $" + this.state.htmlPrice.toString()} disabled={!this.state.editable} onChange={this.handlePriceChange} />
+          <ContentEditable className={!this.state.editable ? "" : "editable"} html={this.state.htmlPrice.toString()} disabled={!this.state.editable} onChange={this.handlePriceChange} />
           <p value={this.state.htmlPrice} onChange={this.handlePriceChange}/>
+          
             {
               this.props.itemType.map((type,index) => {
                 return (

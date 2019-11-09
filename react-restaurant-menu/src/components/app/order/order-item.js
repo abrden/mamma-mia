@@ -66,7 +66,6 @@ export default class OrderItem extends Component {
 }
 
 function getImagePathFromType(type){
-  console.log(type)
   if (type === "veggie") return Veggie
   if (type === "gluten_free") return GlutenFree
 }

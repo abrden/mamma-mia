@@ -20,6 +20,10 @@ const linkToFeedback = React.forwardRef((props, ref) => (
   <RouterLink innerRef={ref} to="/feedback" {...props} />
 ));
 
+const linkToSetMenu = React.forwardRef((props, ref) =>
+  <RouterLink innerRef={ref} to="/menu-maker" {...props} />
+);
+
 const images = [
   {
     url: pizza,
@@ -29,9 +33,9 @@ const images = [
   },
   {
     url: ensalada,
-    title: 'Menu of the day',
+    title: 'Set Menu',
     width: '50%',
-    link: linkToCourses,
+    link: linkToSetMenu,
   },
   {
     url: hamburguesa,
@@ -42,7 +46,7 @@ const images = [
 
   {
     url: milanesas,
-    title: 'Payments',
+    title: 'Payment Methods',
     width: '50%',
     link: linkToPayments,
   },

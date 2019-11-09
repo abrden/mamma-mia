@@ -4,6 +4,9 @@ import getItemIndex from "../../../utils/itemIndex"
 import OrderView from "./order-view"
 import OrderSummary from "./order-summary"
 import Grid from "@material-ui/core/Grid"
+import SaveIcon from '@material-ui/icons/Save';
+import EditIcon from '@material-ui/icons/Edit';
+import Button from '@material-ui/core/Button';
 
 export default class OrderContainer extends Component {
   constructor(props) {
@@ -48,9 +51,7 @@ export default class OrderContainer extends Component {
 
     if (selectedItems[course].length !== 0) {
       let index = selectedItems[course].findIndex(item => item.id === id)
-      let index2 = getItemIndex(selectedItems[course], id)
-      console.log(index+" "+index2)
-      /* If index is not negative delete the item */
+
       if (index >= 0) {
         selectedItems[course].splice(index, 1)
         this.setState({
@@ -71,13 +72,6 @@ export default class OrderContainer extends Component {
     const { selectedItems } = this.state
     const { course } = this.props
     if (Object.keys(selectedItems).length - 1 !== course) {
-      /* Check if at least one item is selected in main couse */
-      if (course === 4) {
-        if (selectedItems[course].length === 0) {
-          alert("Select at least one item from this course.")
-          return
-        }
-      }
       this.props.changeCourse(course + 1)
     } else {
       this.props.summaryHandler()
@@ -89,14 +83,28 @@ export default class OrderContainer extends Component {
     this.props.summaryHandler()
   }
 
+  handleSaveMenu = () => {
+    //AJAX call to backend
+  }
+
+  calculatePrice = (items) => {
+    //Calculates price of new set menu by summing all of them and substract 15% discount
+    const price = 300
+    return price * .85
+  }
+
   render() {
     if (this.props.summary) {
       return (
         <div className="summary-container">
           <OrderSummary selectedItems={this.state.selectedItems} />
-          <button className="button default" onClick={this.handleChangeOrder}>
-            Change order
-          </button>
+          <p>Price: ${this.calculatePrice(this.state.selectedItems)}</p>
+          <Button className="button default" variant="contained" size="small" color="default" onClick={this.handleSaveMenu}>
+              <SaveIcon/> Save Menu
+          </Button>
+          <Button className="button default" variant="contained" size="small" color="default" onClick={this.handleChangeOrder}>
+              <EditIcon/> Change Menu
+          </Button>
         </div>
       )
     } else {

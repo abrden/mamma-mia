@@ -3,6 +3,7 @@ import { getCourseName } from "../../../utils/courseName"
 import OrderSummaryView from "./order-summary-view"
 
 export default class OrderSummary extends Component {
+
   render() {
     const { selectedItems } = this.props
     return Object.keys(selectedItems).map(item => {
@@ -18,8 +19,6 @@ export default class OrderSummary extends Component {
             courseItems={courseItems}
           />
         )
-      } else {
-        return(<div><p>Nothing available!</p></div>)
       }
     })
   }

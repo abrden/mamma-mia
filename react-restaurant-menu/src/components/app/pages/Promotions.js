@@ -1,24 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import mercadoPago from '../../../images/mercadopago.jpg';
-import tarjetaCredito from '../../../images/tarjetaCredito.jpg';
-import tarjetaDebito from '../../../images/credito.jpg';
-import efectivo from '../../../images/efectivo.jpg';
 
-/* const useStyles = makeStyles({
-  card: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-}); */
+import Typography from '@material-ui/core/Typography';
+
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -96,54 +82,32 @@ const useStyles = makeStyles(theme => ({
 
 const payments = [
     {
-        title: "Mercado Pago",
-        description: "Fast, safe and no additional cost. Powered by Mercado Libre",
-        image: mercadoPago
+        title: "20% Discount!",
+        description: "Get a 20% discount paying cash!"
     },
     {
-        title: "Credit cards",
-        description: "We accept any credit card (Visa, Mastercard, Amex) from any bank",
-        image: tarjetaCredito
-    },
-    {
-        title: "Debit cards",
-        description: "We accept any debit card from any bank",
-        image: tarjetaDebito
-    },
-  
-    {
-        title: "Cash",
-        description: "We accept cash payments",
-        image: efectivo
-    },
+        title: "Payments without interest charges!",
+        description: "Paying with credit cards (Visa and Mastercard only)"
+    }
   ];
 
   
-export default function PaymentCard() {
+export default function PromotionCard() {
   const classes = useStyles();
  
 
   return (
     <div className={classes.root}>
      {payments.map(payment => (
-      <Card className={classes.card} style={{width: 400, marginLeft: 30, marginRight: 30, marginTop: 10}}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.image}
-          image={payment.image}
-          title={payment.title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {payment.title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {payment.description}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-      </CardActions>
+      <Card className={classes.card}>
+      <CardContent>
+        <Typography className={classes.title} color="textSecondary" gutterBottom>
+        {payment.title}
+        </Typography>
+        <Typography variant="h5" component="h2">
+         {payment.description}
+        </Typography>
+      </CardContent>
     </Card>
      ))}
      <li></li>

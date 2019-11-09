@@ -28,7 +28,7 @@ export default function PageBar() {
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
           </IconButton>
           <Typography variant="h6" className={classes.title}>
-            Payments
+            Payment Methods & Special Offers
           </Typography>
         </Toolbar>
       </AppBar>
