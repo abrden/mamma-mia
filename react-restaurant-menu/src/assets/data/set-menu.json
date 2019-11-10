@@ -1,1 +1,14 @@
-[{"title":"Grilled Vegetable Bruschetta"},{"title": "Steak and Brassicas with Red Wine Sauce"},{"title": "Ultimate Chocolate Mousse"}]
+[
+    {
+        "title": "Grilled Vegetable Bruschetta",
+        "description": "What could be more summery than grilled peppers and squash heaped on toasted country bread that's slathered with fresh basil pesto?"
+    },
+    {
+        "title": "Steak and Brassicas with Red Wine Sauce",
+        "description": "The brassicas here include baby cauliflower, cute 2- to 4-inch heads that come in vibrant colors like green, orange and purple as well as the usual ivory."        
+    },
+    {
+        "title": "Ultimate Chocolate Mousse",
+        "description": "This is the ultimate, the definitive, the ne plus ultra, the finest chocolate mousse creation ever whipped up."
+    }
+]

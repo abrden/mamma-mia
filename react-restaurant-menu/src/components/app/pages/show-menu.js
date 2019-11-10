@@ -4,21 +4,14 @@ import Menu from "../set-menu"
 import "../app.scss"
 
 export default class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      course: "0",
-      summary: false
-    }
+
+  getPrice(){
+    return (Math.random() * (400 - 300) + 300).toFixed(2);
   }
 
   handleCourse = (course = "0") => {
     console.log(course)
     this.setState({ course })
-  }
-
-  handleSummary = () => {
-    this.setState({ summary: !this.state.summary })
   }
 
   render() {
@@ -27,12 +20,9 @@ export default class App extends Component {
         <h1 className="title">
           Today's Set Menu
         </h1>
-        <p>Our new combination of courses made with love for you. Includes beverages</p>
-        <Menu
-          {...this.state}
-          changeCourse={this.handleCourse}
-          summaryHandler={this.handleSummary}
-        />
+        <p>Our new combination of courses made with love for you. Includes beverages and coffee</p>
+        <Menu/>
+        <p>Price for today's menu: ${this.getPrice()}</p>
       </main>
     )
   }

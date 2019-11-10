@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import getCourseItems from "../../../utils/courseItem"
 import MenuCourseView from "./menu-course-view"
 import Grid from "@material-ui/core/Grid"
 
@@ -23,25 +22,27 @@ export default class MenuCourseContainer extends Component {
 
   fetchData = () => {
     const jsonData = require("../../../assets/data/set-menu.json")
-    const courseItems = getCourseItems(jsonData, this.props.course)
+    const courseItems = jsonData
 
     this.setState({
       courseItems
     })
   }
 
-  handleChangeOrder = () => {
-    this.props.changeCourse()
-    this.props.summaryHandler()
-  }
-
   render() {
+    if (this.state.courseItems.length > 0){
       return (
         <div className="order-container">
-            <Grid container spacing={3}>
-              <MenuCourseView {...this.state} course={this.props.course} />
+            <Grid container spacing={3} direction="column">
+              <MenuCourseView {...this.state}/>
             </Grid> 
         </div>
-      )
+      )} else {
+        return (
+          <div className="order-container">
+            <p>We are working on a new menu for you!</p>
+         </div>
+        )
+      }
     }
   }

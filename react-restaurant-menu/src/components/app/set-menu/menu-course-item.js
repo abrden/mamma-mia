@@ -1,26 +1,23 @@
 import React, { Component } from "react"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
+import Typography from "@material-ui/core/Typography"
 
-export default class CourseItem extends Component {
+export default class MenuCourseItem extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      htmlTitle: this.props.itemTitle,
-      htmlDescription: this.props.itemDescription,
-      htmlPrice: this.props.itemPrice,
-      courseID : this.props.id,
-      categoryID: this.props.category_id,
-      editable: false,
-      deleted: false
+      itemTitle: this.props.itemTitle,
+      itemDescription: this.props.itemDescription
     };
   };
 
   render() {
     return (
-      <Card className="">
+      <Card>
         <CardContent>
-          <h6 value={this.state.htmlTitle}/>
+          <Typography gutterBottom variant="h6" component="h2" className="item-title">{this.state.itemTitle}</Typography>
+          <Typography gutterBottom variant="body2" component="p" className="item-desc">{this.state.itemDescription}</Typography>
         </CardContent>
       </Card>
     )
