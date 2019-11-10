@@ -7,7 +7,7 @@ export default class CategoriesButtonPanel extends Component {
   }
 
   render() {
-    return Object.keys(this.props.courses).map((id,index) => (
+    return Object.keys(this.props.courses).map((id) => (
       <CategoriesButton
         key={id}
         course={id}

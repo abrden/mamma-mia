@@ -23,7 +23,6 @@ export default class CourseItem extends Component {
       editable: false,
       deleted: false
     };
-    //this.updateCategoriesList = this.updateCategoriesList.bind(this);
   };
 
   handleClick = () => {
@@ -61,7 +60,6 @@ export default class CourseItem extends Component {
         .set('Content-Type','application/json')
         .send(course)
         .end((error,response) => {
-          var courseId = response.body.course_id
           console.log(response)
           console.log(error)
       })

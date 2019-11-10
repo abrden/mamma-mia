@@ -13,6 +13,7 @@ export default class OrderView extends Component {
       <Grid item xs={4} key={res.id}>
         <OrderItem
           id={res.id}
+          category_id={res.category_id}
           itemTitle={res.title}
           itemDescription={res.description}
           itemPrice={res.price}

@@ -38,7 +38,6 @@ export default class CategoryContainer extends Component {
         .set('Content-Type','application/json')
         .send({name:newCategory})
         .end((error,response) => {
-          var catId = response.body.category_id
           console.log(response)
           console.log(error)
     })

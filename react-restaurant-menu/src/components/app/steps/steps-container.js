@@ -4,9 +4,7 @@ import ButtonPanel from "./steps-button-panel"
 
 export default class StepsContainer extends Component {
   handleClick = course => {
-    if (this.props.course > course) {
       this.props.changeCourse(course)
-    }
   }
 
   render() {

@@ -29,7 +29,6 @@ export default class CategoryView extends Component {
         .set('Content-Type','application/json')
         .send({name:updatedCategory.html, category_id:updatedCategory.categoryID})
         .end((error,response) => {
-          var catId = response.body.category_id
           console.log(response)
           console.log(error)
       })

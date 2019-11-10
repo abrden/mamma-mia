@@ -7,6 +7,14 @@ import CardMedia from "@material-ui/core/CardMedia"
 import GlutenFree from "../../../images/gluten_free.png"
 import Veggie from "../../../images/veggie.png"
 export default class OrderItem extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      courseID : this.props.id,
+      categoryID: this.props.category_id,
+    };
+  };
+
   handleClick = () => {
     this.props.itemHandler(this.props.id, this.props.itemTitle)
   }

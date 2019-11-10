@@ -6,7 +6,6 @@ import "../app.scss"
 
 export default class Courses extends Component {
   constructor(props) {
-    console.log("cargue courses");
     super(props)
     this.state = {
       course: "0",
@@ -15,6 +14,7 @@ export default class Courses extends Component {
   }
 
   handleCourse = (course = 0) => {
+    console.log(course)
     this.setState({ course })
   }
 

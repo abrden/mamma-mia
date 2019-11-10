@@ -50,7 +50,6 @@ export default class CourseContainer extends Component {
       .set('Content-Type','application/json')
       .send(newCourse)
       .end((error,response) => {
-        var courseId = response.body.course_id
         console.log(response)
         console.log(error)
     })
@@ -66,7 +65,7 @@ export default class CourseContainer extends Component {
       return (
         <div className="order-container">
             <Grid container spacing={3}>
-              <CourseView {...this.state} course={this.props.course} itemHandler={this.handleItems} />
+              <CourseView {...this.state} course={this.props.course} />
             </Grid> 
             <Button className="button default" variant="contained" size="small" color="default" onClick={this.handleNewCourse}>
               <AddIcon/> New Course

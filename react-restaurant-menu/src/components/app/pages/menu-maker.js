@@ -14,6 +14,7 @@ export default class App extends Component {
   }
 
   handleCourse = (course = "0") => {
+    console.log(course)
     this.setState({ course })
   }
 

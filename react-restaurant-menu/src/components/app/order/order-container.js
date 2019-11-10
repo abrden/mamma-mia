@@ -35,7 +35,6 @@ export default class OrderContainer extends Component {
 
     if (Object.entries(selectedItems).length === 0) {
       jsonData.map(res => {
-        /* Add empty arrays for each course to add items later */
         return (selectedItems[res.category_id] = [])
       })
     }
@@ -69,14 +68,8 @@ export default class OrderContainer extends Component {
     })
   }
 
-  handleNextCourse = () => {
-    const { selectedItems } = this.state
-    const { course } = this.props
-    if (Object.keys(selectedItems).length - 1 !== course) {
-      this.props.changeCourse(course + 1)
-    } else {
+  handleShowSummary = () => {
       this.props.summaryHandler()
-    }
   }
 
   handleChangeOrder = () => {
@@ -97,7 +90,6 @@ export default class OrderContainer extends Component {
       return (
         <div className="summary-container">
           <OrderSummary selectedItems={this.state.selectedItems} />
-          <p>Price: ${this.getPrice()}</p>
           <Button className="button default" variant="contained" size="small" color="default" onClick={this.handleSaveMenu}>
               <SaveIcon/> Save Menu
           </Button>
@@ -116,12 +108,9 @@ export default class OrderContainer extends Component {
               itemHandler={this.handleItems}
             />
           </Grid>
-          <button className="button default" onClick={this.handleNextCourse}>
-            {Object.keys(this.state.selectedItems).length - 1 !==
-            this.props.course
-              ? "Next course"
-              : "Show complete order"}
-          </button>
+          <Button className="button default" variant="contained" onClick={this.handleShowSummary} > 
+            Show Complete Order
+          </Button>
         </div>
       )
     }
