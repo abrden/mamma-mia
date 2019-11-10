@@ -29,6 +29,10 @@ export default class MenuCourseContainer extends Component {
     })
   }
 
+  getPrice(){
+    return (Math.random() * (400 - 300) + 300).toFixed(2);
+  }
+
   render() {
     if (this.state.courseItems.length > 0){
       return (
@@ -36,6 +40,7 @@ export default class MenuCourseContainer extends Component {
             <Grid container spacing={3} direction="column">
               <MenuCourseView {...this.state}/>
             </Grid> 
+            <p>Price for today's menu: ${this.getPrice()}</p>
         </div>
       )} else {
         return (
