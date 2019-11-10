@@ -8,3 +8,4 @@ export { default as Categories} from "./categories-maker";
 export { default as PaymentsHome } from "./PaymentsHome";
 export { default as FeedbackHome } from "./FeedbackHome";
 export { default as Courses } from "./course-maker";
+export { default as Menu } from "./show-menu";

@@ -1,5 +1,5 @@
 import {
-    SignUp, Login, Register, Home, App, HomeUser, Categories, PaymentsHome, Courses, FeedbackHome
+    SignUp, Login, Register, Home, App, HomeUser, Categories, PaymentsHome, Courses, FeedbackHome, Menu
   } from "../../components/app/pages/index.js";
     
   export const routes = [
@@ -86,7 +86,7 @@ import {
 
     {
       path: "/show-menu",
-      component: Courses,
+      component: Menu,
       exact: true,
       redirectTo: '/'
     }
