@@ -1,14 +1,1 @@
-[
-    {
-        "title": "Grilled Vegetable Bruschetta",
-        "description": "What could be more summery than grilled peppers and squash heaped on toasted country bread that's slathered with fresh basil pesto?"
-    },
-    {
-        "title": "Steak and Brassicas with Red Wine Sauce",
-        "description": "The brassicas here include baby cauliflower, cute 2- to 4-inch heads that come in vibrant colors like green, orange and purple as well as the usual ivory."        
-    },
-    {
-        "title": "Ultimate Chocolate Mousse",
-        "description": "This is the ultimate, the definitive, the ne plus ultra, the finest chocolate mousse creation ever whipped up."
-    }
-]
+[{"id":"1","title":"Zucchini-and-Pepper Gratin with Herbs and Cheese","description":"Pleasantly salty Sbrinz to top a gratin made with a ratatouille-like mix of sautéed zucchini strips, bell peppers and tomato."},{"id":"0","title":"Grilled Vegetable Bruschetta","description":"What could be more summery than grilled peppers and squash heaped on toasted country bread that's slathered with fresh basil pesto?"},{"id":"11","title":"Seared Salmon with Summer Vegetables","description":"The myriad vegetables in the recipe—corn, spinach, shiitakes, and tomato—sing of late summer."},{"id":"21","title":"Mojo Pork Steak with Seared Avocados and Oranges","description":"Chiles, citrus, and garlic make up the classic mojo rub for this family-size blade steak, cut from the pork shoulder."}]

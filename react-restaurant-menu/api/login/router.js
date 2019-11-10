@@ -31,14 +31,14 @@ router.route('/feedback').post((request, response) => {
     let result = UserHandler.saveMessage(name, message);
     response.status(result['status']).send(result['message']);
 });
-
+/*
 router.route('/saveMenu').post((request, response) => {
     let jsonData = request.body; 
     let fs = require('fs');
     fs.writeFileSync("../../src/assets/data/setMenu.json",jsonData)
     response.status(result['status']).send(result['message']);
 });
-
+*/
 router.route('/saveUser').post((request, response) => {
     let jsonData = request.body;
     let email = jsonData['email'];
@@ -80,6 +80,13 @@ router.route('/deleteCourse').post((request, response) => {
     let course_id = jsonData['course_id'];
 
     let result = UserHandler.deleteCourse(course_id);
+    response.status(result['status']).send({ message:result['message']});
+});
+
+router.route('/saveMenu').post((request, response) => {
+    let menu = request.body.newMenu;
+    console.log(menu);
+    let result = UserHandler.saveMenu(menu);
     response.status(result['status']).send({ message:result['message']});
 });
 

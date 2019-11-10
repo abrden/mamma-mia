@@ -6,6 +6,7 @@ import Grid from "@material-ui/core/Grid"
 import SaveIcon from '@material-ui/icons/Save';
 import EditIcon from '@material-ui/icons/Edit';
 import Button from '@material-ui/core/Button';
+import superagent from 'superagent';
 
 export default class OrderContainer extends Component {
   constructor(props) {
@@ -43,11 +44,10 @@ export default class OrderContainer extends Component {
     })
   }
 
-  handleItems = (id, itemTitle) => {
+  handleItems = (id, itemTitle, itemDescription) => {
     let { selectedItems } = this.state
     const { course } = this.props
-    const item = { id: id, title: itemTitle }
-
+    const item = { id: id, title: itemTitle, description: itemDescription }
     if (selectedItems[course].length !== 0) {
       let index = selectedItems[course].findIndex(item => item.id === id)
 
@@ -77,7 +77,27 @@ export default class OrderContainer extends Component {
   }
 
   handleSaveMenu = () => {
-    this.props.handleSaveMenu()
+  //  this.props.handleSaveMenu()
+    var newMenu = []
+    alert(JSON.stringify(this.state.selectedItems))
+    for (var category_id in this.state.selectedItems)
+    {
+      this.state.selectedItems[category_id].forEach(function(course, index){
+        newMenu.push(course);
+      });
+    }
+    superagent
+      .post('http://localhost:9000/login/login/saveMenu')
+      .set('Content-Type','application/json')
+      .send({ newMenu })
+      .end((error,response) => {
+        if (response.status == 200)
+        {
+          alert(response.body.message);
+        }
+        console.log(response)
+        console.log(error)
+      })
   }
 
   render() {

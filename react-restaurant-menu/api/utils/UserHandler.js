@@ -7,6 +7,7 @@ const USERS_DIR = "./data/users/users_database.json"
 const FEEDBACKS_DIR = "./data/saved_messages/messages_of_feedback.json"
 const CATEGORIES_DIR = "src/assets/data/categories.json"
 const COURSES_DIR = "src/assets/data/fe-tech-data.json"
+const MENU_DIR = "src/assets/data/set-menu.json"
 const crypto = require("crypto");
 
 class UserHandler {
@@ -152,6 +153,11 @@ class UserHandler {
 		fs.writeFileSync(COURSES_DIR, JSON.stringify(coursesJson));
 
 		return { "status": 200, "message": "Categoria borrada exitosamente." };
+	}
+
+	static saveMenu(newMenu){
+		fs.writeFileSync(MENU_DIR, JSON.stringify(newMenu));
+		return { "status": 200, "message": "Menu guardado exitosamente." };
 	}
 }
 

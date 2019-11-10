@@ -4,8 +4,8 @@ import Grid from "@material-ui/core/Grid"
 import getItemIndex from "../../../utils/itemIndex"
 
 export default class OrderView extends Component {
-  handleClick = (id, itemTitle) => {
-    this.props.itemHandler(id, itemTitle)
+  handleClick = (id, itemTitle, itemDescription) => {
+    this.props.itemHandler(id, itemTitle, itemDescription)
   }
 
   render() {

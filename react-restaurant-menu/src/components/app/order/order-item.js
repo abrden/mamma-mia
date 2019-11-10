@@ -16,7 +16,7 @@ export default class OrderItem extends Component {
   };
 
   handleClick = () => {
-    this.props.itemHandler(this.props.id, this.props.itemTitle)
+    this.props.itemHandler(this.props.id, this.props.itemTitle, this.props.itemDescription)
   }
 
   render() {
