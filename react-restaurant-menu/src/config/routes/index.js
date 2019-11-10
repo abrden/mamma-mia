@@ -82,5 +82,12 @@ import {
       component: Courses,
       exact: true,
       redirectTo: '/'
+    },
+
+    {
+      path: "/show-menu",
+      component: Courses,
+      exact: true,
+      redirectTo: '/'
     }
   ];
