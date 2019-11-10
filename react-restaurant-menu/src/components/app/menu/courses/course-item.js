@@ -60,6 +60,10 @@ export default class CourseItem extends Component {
         .set('Content-Type','application/json')
         .send(course)
         .end((error,response) => {
+          if (response.status == 200)
+          {
+            alert(response.body.message);
+          }
           console.log(response)
           console.log(error)
       })
@@ -76,6 +80,10 @@ export default class CourseItem extends Component {
         .set('Content-Type','application/json')
         .send({course_id:this.state.courseID})
         .end((error,response) => {
+          if (response.status == 200)
+          {
+            alert(response.body.message);
+          }
           console.log(response)
           console.log(error)
       })

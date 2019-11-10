@@ -79,7 +79,6 @@ export default class OrderContainer extends Component {
   handleSaveMenu = () => {
   //  this.props.handleSaveMenu()
     var newMenu = []
-    alert(JSON.stringify(this.state.selectedItems))
     for (var category_id in this.state.selectedItems)
     {
       this.state.selectedItems[category_id].forEach(function(course, index){

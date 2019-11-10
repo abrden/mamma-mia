@@ -152,7 +152,7 @@ class UserHandler {
 		coursesJson.splice(coursesJson.findIndex(item => item.id === course_id), 1);
 		fs.writeFileSync(COURSES_DIR, JSON.stringify(coursesJson));
 
-		return { "status": 200, "message": "Categoria borrada exitosamente." };
+		return { "status": 200, "message": "Plato borrado exitosamente." };
 	}
 
 	static saveMenu(newMenu){

@@ -19,6 +19,10 @@ export default class CategoryView extends Component {
         .set('Content-Type','application/json')
         .send({category_id:updatedCategory.categoryID})
         .end((error,response) => {
+          if (response.status == 200)
+          {
+            alert(response.body.message);
+          }
           console.log(response)
           console.log(error)
       })
@@ -29,6 +33,10 @@ export default class CategoryView extends Component {
         .set('Content-Type','application/json')
         .send({name:updatedCategory.html.replace("<br>",""), category_id:updatedCategory.categoryID})
         .end((error,response) => {
+          if (response.status == 200)
+          {
+            alert(response.body.message);
+          }
           console.log(response)
           console.log(error)
       })
