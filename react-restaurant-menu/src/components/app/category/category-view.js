@@ -27,7 +27,7 @@ export default class CategoryView extends Component {
       superagent
         .post('http://localhost:9000/login/login/saveCategory')
         .set('Content-Type','application/json')
-        .send({name:updatedCategory.html, category_id:updatedCategory.categoryID})
+        .send({name:updatedCategory.html.replace("<br>",""), category_id:updatedCategory.categoryID})
         .end((error,response) => {
           console.log(response)
           console.log(error)

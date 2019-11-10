@@ -50,9 +50,9 @@ export default class CourseItem extends Component {
       let course = {
         course_id : this.state.courseID,
         category_id : this.state.categoryID,
-        description : this.state.htmlDescription,
-        price       : this.state.htmlPrice,
-        title       : this.state.htmlTitle,
+        description : this.state.htmlDescription.replace("<br>",""),
+        price       : this.state.htmlPrice.replace("<br>",""),
+        title       : this.state.htmlTitle.replace("<br>",""),
         type        : []
       }
       superagent
