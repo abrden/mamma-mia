@@ -9,6 +9,7 @@ import ContentEditable from 'react-contenteditable'
 import Button from '@material-ui/core/Button';
 import GlutenFree from "../../../../images/gluten_free.png"
 import Veggie from "../../../../images/veggie.png"
+import superagent from 'superagent';
 
 export default class CourseItem extends Component {
   constructor(props) {
@@ -17,7 +18,8 @@ export default class CourseItem extends Component {
       htmlTitle: this.props.itemTitle,
       htmlDescription: this.props.itemDescription,
       htmlPrice: this.props.itemPrice,
-      //categoryID: this.props.id,
+      courseID : this.props.id,
+      categoryID: this.props.category_id,
       editable: false,
       deleted: false
     };
@@ -44,11 +46,41 @@ export default class CourseItem extends Component {
   };
 
   toggleEditable = () => {
-    if(this.state.editable) this.setState({ editable: !this.state.editable }, this.updateCategoriesList);
-    else this.setState({ editable: !this.state.editable });
+    if(this.state.editable) {
+      this.setState({ editable: !this.state.editable }, this.updateCategoriesList);
+      let course = {
+        course_id : this.state.courseID,
+        category_id : this.state.categoryID,
+        description : this.state.htmlDescription,
+        price       : this.state.htmlPrice,
+        title       : this.state.htmlTitle,
+        type        : []
+      }
+      superagent
+        .post('http://localhost:9000/login/login/saveCourse')
+        .set('Content-Type','application/json')
+        .send(course)
+        .end((error,response) => {
+          var courseId = response.body.course_id
+          console.log(response)
+          console.log(error)
+      })
+    }
+    else
+    { 
+      this.setState({ editable: !this.state.editable });
+    }
   };
 
   handleRemoval = () => {
+    superagent
+        .post('http://localhost:9000/login/login/deleteCourse')
+        .set('Content-Type','application/json')
+        .send({course_id:this.state.courseID})
+        .end((error,response) => {
+          console.log(response)
+          console.log(error)
+      })
     this.setState({ deleted: true }, /*this.updateCategoriesList*/);
   }
 

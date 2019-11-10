@@ -4,12 +4,13 @@ import Grid from "@material-ui/core/Grid"
 import { getCoursesFromFile } from "../../../utils/courseName"
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import superagent from 'superagent';
 
 export default class CategoryContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      categoriesItems: [],
+      categoriesItems: {},
     }
     this.imprimirAlgo = this.imprimirAlgo.bind(this)
   }
@@ -32,11 +33,19 @@ export default class CategoryContainer extends Component {
 
   handleNewCategory = () => {
     const newCategory = "New Category"
-    const newComponents = [...this.state.categoriesItems, newCategory];
+    superagent
+        .post('http://localhost:9000/login/login/saveCategory')
+        .set('Content-Type','application/json')
+        .send({name:newCategory})
+        .end((error,response) => {
+          var catId = response.body.category_id
+          console.log(response)
+          console.log(error)
+    })
 
     this.setState({
-      categoriesItems: newComponents
-    });
+      categoriesItems : getCoursesFromFile()
+    })
   }
 
   updateCategoriesList = (newCategories) => {
@@ -55,7 +64,8 @@ export default class CategoryContainer extends Component {
   }
 
   render() {
-    if (this.state.categoriesItems.length > 0) {
+    //Chequeo que el json de categorias no sea vacio.
+    if (!(Object.entries(this.state.categoriesItems).length === 0 && this.state.categoriesItems.constructor === Object)) {
       return (
         <div className="order-container">
           <p>Displaying all available categories</p>

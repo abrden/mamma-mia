@@ -9,7 +9,7 @@ export default class Courses extends Component {
     console.log("cargue courses");
     super(props)
     this.state = {
-      course: 0,
+      course: "0",
       summary: false
     }
   }

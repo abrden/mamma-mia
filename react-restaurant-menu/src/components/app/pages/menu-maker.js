@@ -8,12 +8,12 @@ export default class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      course: 0,
+      course: "0",
       summary: false
     }
   }
 
-  handleCourse = (course = 0) => {
+  handleCourse = (course = "0") => {
     this.setState({ course })
   }
 

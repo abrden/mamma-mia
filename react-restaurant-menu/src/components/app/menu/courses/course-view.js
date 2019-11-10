@@ -12,6 +12,7 @@ export default class CourseView extends Component {
       <Grid item xs={4} key={res.id}>
         <CourseItem
           id={res.id}
+          category_id={res.category_id}
           itemTitle={res.title}
           itemDescription={res.description}
           itemPrice={res.price}

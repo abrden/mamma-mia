@@ -24,7 +24,7 @@ export default class CategoryItem extends Component {
   }
 
   handleChange = evt => {
-    this.setState({ html: evt.target.value });
+    this.setState({ updated:true, html: evt.target.value });
   };
 
   toggleEditable = () => {

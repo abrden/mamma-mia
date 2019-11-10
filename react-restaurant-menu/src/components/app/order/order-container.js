@@ -36,7 +36,7 @@ export default class OrderContainer extends Component {
     if (Object.entries(selectedItems).length === 0) {
       jsonData.map(res => {
         /* Add empty arrays for each course to add items later */
-        return (selectedItems[res.courseType[0]] = [])
+        return (selectedItems[res.category_id] = [])
       })
     }
     this.setState({
