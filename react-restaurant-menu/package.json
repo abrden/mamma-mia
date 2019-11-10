@@ -7,8 +7,10 @@
     "@material-ui/icons": "^4.5.1",
     "bcrypt": "^3.0.6",
     "classnames": "^2.2.6",
+    "eslint-plugin-react": "^7.16.0",
     "express": "^4.17.1",
     "formik": "^2.0.3",
+    "jsonfile": "^5.0.0",
     "material-ui": "^0.20.2",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
@@ -18,8 +20,7 @@
     "react-image": "^2.2.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.0.1",
-    "superagent": "^5.1.0",
-    "eslint-plugin-react": "^7.16.0"
+    "superagent": "^5.1.0"
   },
   "scripts": {
     "start": "react-scripts start & node ./api/controller/app.js",

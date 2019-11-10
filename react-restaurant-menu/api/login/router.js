@@ -30,7 +30,13 @@ router.route('/feedback').post((request, response) => {
 
     let result = UserHandler.saveMessage(name, message);
     response.status(result['status']).send(result['message']);
-    
+});
+
+router.route('/saveMenu').post((request, response) => {
+    let jsonData = request.body; 
+    let fs = require('fs');
+    fs.writeFileSync("../../src/assets/data/setMenu.json",jsonData)
+    response.status(result['status']).send(result['message']);
 });
 
 module.exports = router;

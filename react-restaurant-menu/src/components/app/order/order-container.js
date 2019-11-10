@@ -1,19 +1,20 @@
 import React, { Component } from "react"
 import getCourseItems from "../../../utils/courseItem"
-import getItemIndex from "../../../utils/itemIndex"
 import OrderView from "./order-view"
 import OrderSummary from "./order-summary"
 import Grid from "@material-ui/core/Grid"
 import SaveIcon from '@material-ui/icons/Save';
 import EditIcon from '@material-ui/icons/Edit';
 import Button from '@material-ui/core/Button';
+import superagent from 'superagent';
 
 export default class OrderContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
       courseItems: [],
-      selectedItems: {}
+      selectedItems: {},
+      price: 0
     }
   }
 
@@ -83,14 +84,12 @@ export default class OrderContainer extends Component {
     this.props.summaryHandler()
   }
 
-  handleSaveMenu = () => {
-    //AJAX call to backend
+  getPrice(){
+    return (Math.random() * (400 - 300) + 300).toFixed(2);
   }
 
-  calculatePrice = (items) => {
-    //Calculates price of new set menu by summing all of them and substract 15% discount
-    const price = 300
-    return price * .85
+  handleSaveMenu = () => {
+    this.props.handleSaveMenu()
   }
 
   render() {
@@ -98,7 +97,7 @@ export default class OrderContainer extends Component {
       return (
         <div className="summary-container">
           <OrderSummary selectedItems={this.state.selectedItems} />
-          <p>Price: ${this.calculatePrice(this.state.selectedItems)}</p>
+          <p>Price: ${this.getPrice()}</p>
           <Button className="button default" variant="contained" size="small" color="default" onClick={this.handleSaveMenu}>
               <SaveIcon/> Save Menu
           </Button>
