@@ -6,7 +6,6 @@ import Grid from "@material-ui/core/Grid"
 import SaveIcon from '@material-ui/icons/Save';
 import EditIcon from '@material-ui/icons/Edit';
 import Button from '@material-ui/core/Button';
-import superagent from 'superagent';
 
 export default class OrderContainer extends Component {
   constructor(props) {
@@ -75,10 +74,6 @@ export default class OrderContainer extends Component {
   handleChangeOrder = () => {
     this.props.changeCourse()
     this.props.summaryHandler()
-  }
-
-  getPrice(){
-    return (Math.random() * (400 - 300) + 300).toFixed(2);
   }
 
   handleSaveMenu = () => {
