@@ -6,6 +6,7 @@ const SALT_ROUNDS = 10
 const USERS_DIR = "./data/users/users_database.json"
 const FEEDBACKS_DIR = "./data/saved_messages/messages_of_feedback.json"
 const CATEGORIES_DIR = "src/assets/data/categories.json"
+const COURSES_DIR = "src/assets/data/fe-tech-data.json"
 const crypto = require("crypto");
 
 class UserHandler {
@@ -85,11 +86,8 @@ class UserHandler {
 		let categoriesJson = this.getCategories();
 		if (category_id == null){
 			category_id = crypto.randomBytes(16).toString("hex"); //Creo un nuevo ID unico para la categoria
-			categoriesJson[category_id] = name;
 		}
-		else{
-			categoriesJson[category_id] = name;
-		}
+		categoriesJson[category_id] = name;
 		fs.writeFileSync(CATEGORIES_DIR, JSON.stringify(categoriesJson));
 
 		return { "status": 200, "message": "Categoria guardada exitosamente.", "category_id":category_id };
@@ -99,6 +97,45 @@ class UserHandler {
 		let categoriesJson = this.getCategories();
 		delete categoriesJson[category_id];
 		fs.writeFileSync(CATEGORIES_DIR, JSON.stringify(categoriesJson));
+
+		return { "status": 200, "message": "Categoria borrada exitosamente." };
+	}
+
+	static getCourses() {
+		let courses = fs.readFileSync(COURSES_DIR);
+		let coursesJson = JSON.parse(courses);
+		return coursesJson;
+	}
+
+	static saveCourse(category_id, course_id, title, desc, types = [], price){
+		let coursesJson = this.getCourses();
+		if (course_id == null){
+			course_id = crypto.randomBytes(16).toString("hex"); //Creo un nuevo ID unico para el plato
+		}
+		let course = {
+			"category_id": category_id,
+			"id": course_id,
+			"title": title,
+			"description": desc,
+			"type": types,
+			"price": price
+		}
+		var index = coursesJson.findIndex(item => item.id === course_id);
+		if (index < 0){
+			coursesJson.push(course)
+		} 
+		else{
+			coursesJson[index] = course;
+		} 
+		fs.writeFileSync(COURSES_DIR, JSON.stringify(coursesJson));
+
+		return { "status": 200, "message": "Plato guardado exitosamente.", "course_id":course_id };
+	}
+
+	static deleteCourse(course_id){ 
+		let coursesJson = this.getCourses();
+		coursesJson.splice(coursesJson.findIndex(item => item.id === course_id), 1);
+		fs.writeFileSync(COURSES_DIR, JSON.stringify(coursesJson));
 
 		return { "status": 200, "message": "Categoria borrada exitosamente." };
 	}

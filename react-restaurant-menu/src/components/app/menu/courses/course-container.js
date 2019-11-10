@@ -4,6 +4,7 @@ import CourseView from "./course-view"
 import Grid from "@material-ui/core/Grid"
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import superagent from 'superagent';
 
 export default class CourseContainer extends Component {
   constructor(props) {
@@ -25,7 +26,6 @@ export default class CourseContainer extends Component {
 
   fetchData = () => {
     const jsonData = require("../../../../assets/data/fe-tech-data.json")
-    console.log(this.props.course)
     const courseItems = getCourseItems(jsonData, this.props.course)
 
     this.setState({
@@ -39,12 +39,21 @@ export default class CourseContainer extends Component {
   }
 
   handleNewCourse= () => {
-     const newCourse = { courseType  : [this.props.course],
+     const newCourse = { category_id : this.props.course,
                          description : "New course for Mamma Mía Restaurant!",
-                         id          : this.state.courseItems.length + 1,
+                         id          : null,
                          price       : 0.00,
                          title       : "New Course",
                          type        : [] }
+    superagent
+      .post('http://localhost:9000/login/login/saveCourse')
+      .set('Content-Type','application/json')
+      .send(newCourse)
+      .end((error,response) => {
+        var courseId = response.body.course_id
+        console.log(response)
+        console.log(error)
+    })
 
     const newCourseItems = [...this.state.courseItems, newCourse];
 

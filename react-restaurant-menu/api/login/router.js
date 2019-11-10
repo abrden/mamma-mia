@@ -57,4 +57,24 @@ router.route('/deleteCategory').post((request, response) => {
     response.status(result['status']).send({ message:result['message']});
 });
 
+router.route('/saveCourse').post((request, response) => {
+    let jsonData = request.body;
+    let course_id = jsonData['course_id'];
+    let category_id = jsonData['category_id'];
+    let title = jsonData["title"];
+    let desc = jsonData["description"];
+    let price = jsonData["price"];
+    let types = jsonData["types"];
+    let result = UserHandler.saveCourse(category_id, course_id, title, desc, types, price);
+    response.status(result['status']).send({ message:result['message'], course_id:result['course_id']});
+});
+
+router.route('/deleteCourse').post((request, response) => {
+    let jsonData = request.body;
+    let course_id = jsonData['course_id'];
+
+    let result = UserHandler.deleteCourse(course_id);
+    response.status(result['status']).send({ message:result['message']});
+});
+
 module.exports = router;
