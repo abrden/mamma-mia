@@ -77,7 +77,6 @@ export default class OrderContainer extends Component {
   }
 
   handleSaveMenu = () => {
-  //  this.props.handleSaveMenu()
     var newMenu = []
     for (var category_id in this.state.selectedItems)
     {
@@ -90,7 +89,7 @@ export default class OrderContainer extends Component {
       .set('Content-Type','application/json')
       .send({ newMenu })
       .end((error,response) => {
-        if (response.status == 200)
+        if (response.status === 200)
         {
           alert(response.body.message);
         }
