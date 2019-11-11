@@ -100,7 +100,7 @@ export default function PromotionCard() {
     <div className={classes.root}>
      {payments.map(payment => (
       <Card className={classes.card}>
-      <CardContent>
+      <CardContent style={{marginLeft:30, marginRight: 20}}>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
         {payment.title}
         </Typography>
@@ -110,7 +110,6 @@ export default function PromotionCard() {
       </CardContent>
     </Card>
      ))}
-     <li></li>
      </div>
      
   );

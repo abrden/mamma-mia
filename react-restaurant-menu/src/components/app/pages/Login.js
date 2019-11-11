@@ -12,6 +12,7 @@ import { Redirect } from "react-router-dom";
 import './Login.css';
 import superagent from 'superagent';
 import Snackbar from '@material-ui/core/Snackbar';
+import LoginBar from './LoginBar'
 
 const styles = theme => ({
 	button: {
@@ -73,15 +74,14 @@ class Login extends Component {
               this.setState({ loggedIn : true, loginMessage : response.text, openSnackbar : true, isAdministrator : true});
             }
             if(response.status == "200"){
-              console.log("Entro a setear es verdadero")
+              //console.log("Entro a setear es verdadero")
               this.state.isAdministrator = true;
-              console.log("El estado del login es", this.state.isAdministrator)
+              //console.log("El estado del login es", this.state.isAdministrator)
             }
        })
   }
 
   renderRedirect = () => {
-    console.log("ENTRO A RENDER REDIRECT")
     if (this.state.loggedIn) {
         return <Redirect to={{
               pathname: '/homeAdmin',
@@ -90,11 +90,6 @@ class Login extends Component {
             />
     }
   }
-
-  /*this.context.router.push({
-    pathname: '/confirmation',
-    state: {email: this.state.email}  
-})*/
 
   hideSnackbar = () => {
     this.setState({
@@ -107,18 +102,18 @@ class Login extends Component {
       return (
 
         <div className="Login">
-
+          <LoginBar></LoginBar>
         {this.renderRedirect()}
-
-        <form className="demoForm" onSubmit={this.handleSubmit}>
-          <h2>Iniciar Sesión</h2>
+        
+        <form className="demoForm" style={{marginTop: 70}} onSubmit={this.handleSubmit}>
+          {/* <h2>Iniciar Sesión</h2> */}
           
           <div>
             <Form.Group controlId="email" bsSize="large">
               <TextField
                 id="outlined-adornment-weight"
                 variant="outlined"
-                label="Email"
+                label="User"
                 value={this.state.email}
                 onChange={this.handleChange('email')}
               />
@@ -132,7 +127,8 @@ class Login extends Component {
             <TextField
               variant="outlined"
               type={this.state.showPassword ? 'text' : 'password'}
-              label="Contraseña"
+              label="Password"
+              style={{marginTop: 25}}
               value={this.state.password}
               onChange={this.handleChange('password')}
               InputProps={{
@@ -150,14 +146,13 @@ class Login extends Component {
               />
             </Form.Group>
           </div>
-          <Button variant = "contained"
-                  color = "primary"
-                  className = { classes.button } 
-                  bsSize = "large"
-                  type = "submit"
-                  onClick = { this.loginUser }>
-              Ingresar
-            </Button>
+            <Button className="button default" 
+                    variant="contained" 
+                    type = "submit"
+                    style={{marginTop: 50}}
+                    onClick={this.loginUser} > 
+            Login
+          </Button>
         </form>
         <Snackbar message={this.state.loginMessage}
                   open={this.state.openSnackbar}
