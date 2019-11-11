@@ -5,6 +5,7 @@ import superagent from 'superagent';
 import Button from '@material-ui/core/Button';
 import Form from 'react-bootstrap/Form';
 import TextField from '@material-ui/core/TextField';
+import "./styles.scss"
 
 const listOfMessages = [];
 
@@ -42,9 +43,9 @@ class FormikBase extends Component{
 render () {
     return (
     <div>
-        <h3>Leave your comment here</h3>
+        <h3 class="text-black" style={{marginLeft: 50, marginTop: 30}}>Leave your comment here</h3>
         <Formik
-        initialValues={{ name: '' }}
+        initialValues={{ name: this.state.name }}
         onSubmit={(values, actions) => {
             listOfMessages.push([values.name, values.message])
             //console.log("List of messages", listOfMessages)
@@ -69,6 +70,7 @@ render () {
                 id="outlined-adornment-weight"
                 variant="outlined"
                 label="Name"
+                style={{marginLeft: 50}}
                 value={props.values.name}
                 onChange={props.handleChange}
               />
@@ -88,6 +90,7 @@ render () {
                 id="outlined-adornment-weight"
                 variant="outlined"
                 label="Message"
+                style={{marginLeft: 50, height: 100, width: 400}}
                 rows="40"
                 margin="normal"
                 //fullWidth="true"
@@ -102,11 +105,14 @@ render () {
                     variant="contained" 
                     size="small" 
                     color="default" 
+                    style={{marginLeft: 50}}
                     onClick={ this.submitFeedback(props.values) }
                     >Submit
             </Button>
             </Form.Row>
+            
             </form>
+            
         )}
         </Formik>
     </div>
