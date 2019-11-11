@@ -1,15 +1,13 @@
 import React, { Component } from "react"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
 import CardActions from '@material-ui/core/CardActions';
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import ContentEditable from 'react-contenteditable'
 import Button from '@material-ui/core/Button';
-import GlutenFree from "../../../../images/gluten_free.png"
-import Veggie from "../../../../images/veggie.png"
 import superagent from 'superagent';
+import CourseFoodType from "./course-food-type"
 
 export default class CourseItem extends Component {
   constructor(props) {
@@ -60,7 +58,7 @@ export default class CourseItem extends Component {
         .set('Content-Type','application/json')
         .send(course)
         .end((error,response) => {
-          if (response.status == 200)
+          if (response.status === 200)
           {
             alert(response.body.message);
           }
@@ -80,7 +78,7 @@ export default class CourseItem extends Component {
         .set('Content-Type','application/json')
         .send({course_id:this.state.courseID})
         .end((error,response) => {
-          if (response.status == 200)
+          if (response.status === 200)
           {
             alert(response.body.message);
           }
@@ -98,16 +96,11 @@ export default class CourseItem extends Component {
           <h6 value={this.state.htmlTitle} onChange={this.handleTitleChange}/>
           <ContentEditable className={!this.state.editable ? "" : "editable"} html={this.state.htmlDescription} disabled={!this.state.editable} onChange={this.handleDescriptionChange} />
           <p value={this.state.htmlDescription} onChange={this.handleDescriptionChange}/>
-          <ContentEditable className={!this.state.editable ? "" : "editable"} html={this.state.htmlPrice.toString()} disabled={!this.state.editable} onChange={this.handlePriceChange} />
-          <p value={this.state.htmlPrice} onChange={this.handlePriceChange}/>
-          
-            {
-              this.props.itemType.map((type,index) => {
-                return (
-                  <CardMedia className="type-image" component="img"	alt={`${type}`}	image={`${getImagePathFromType(type)}`}	key={index}/>
-                )
-              })
-            }
+          <div>
+          <label>Price: $<ContentEditable className={!this.state.editable ? "" : "editable"} html={this.state.htmlPrice.toString()} disabled={!this.state.editable} onChange={this.handlePriceChange} /></label>
+          </div>
+          <p value={this.state.htmlPrice} onChange={this.handlePriceChange} /> 
+          <CourseFoodType editable={this.state.editable} itemType={this.props.itemType} ></CourseFoodType>
         </CardContent>
         <CardActions>
           <Button variant="contained" size="small" color="default" onClick={this.toggleEditable}>
@@ -120,9 +113,4 @@ export default class CourseItem extends Component {
       </Card>
     )
   }
-}
-
-function getImagePathFromType(type){
-  if (type === "veggie") return Veggie
-  if (type === "gluten_free") return GlutenFree
 }
