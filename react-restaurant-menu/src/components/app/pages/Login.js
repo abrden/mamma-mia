@@ -32,7 +32,8 @@ class Login extends Component {
       loggedIn: false,
       showPassword: false,
       loginMessage: '',
-      openSnackbar: false
+      openSnackbar: false,
+      isAdministrator: false
     }
   }
 
@@ -64,21 +65,36 @@ class Login extends Component {
            .set('Content-Type','application/json')
            .send(userData)
            .end((error,response) => {
-             console.log(response)
+             console.log("REsponse login", response)
              console.log(error)
             if (error) {
               this.setState({ loginMessage : response.text, openSnackbar : true });
             } else {
-              this.setState({ loggedIn : true, loginMessage : response.text, openSnackbar : true });
+              this.setState({ loggedIn : true, loginMessage : response.text, openSnackbar : true, isAdministrator : true});
+            }
+            if(response.status == "200"){
+              console.log("Entro a setear es verdadero")
+              this.state.isAdministrator = true;
+              console.log("El estado del login es", this.state.isAdministrator)
             }
        })
   }
 
   renderRedirect = () => {
+    console.log("ENTRO A RENDER REDIRECT")
     if (this.state.loggedIn) {
-      return <Redirect to='/menu-maker' />
+        return <Redirect to={{
+              pathname: '/homeAdmin',
+              state: { isAdministrator: this.state.isAdministrator }
+            }}
+            />
     }
   }
+
+  /*this.context.router.push({
+    pathname: '/confirmation',
+    state: {email: this.state.email}  
+})*/
 
   hideSnackbar = () => {
     this.setState({

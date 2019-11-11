@@ -6,10 +6,10 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import mercadoPago from '../../../images/mercadopago.jpg';
-import tarjetaCredito from '../../../images/tarjetaCredito.jpg';
-import tarjetaDebito from '../../../images/credito.jpg';
-import efectivo from '../../../images/efectivo.jpg';
+import mercadoPago from '../../../images/mercadoPagoNuevo.jpg';
+import tarjetaCredito from '../../../images/tarjetas.jpg';
+import tarjetaDebito from '../../../images/tarjetaDebito.jpg';
+import efectivo from '../../../images/efectivo3.jpg';
 
 /* const useStyles = makeStyles({
   card: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
     },
     image: {
       position: 'relative',
-      height: 100,
+      //height: 100,
       [theme.breakpoints.down('xs')]: {
         width: 50,
         height: 50,
@@ -98,23 +98,35 @@ const payments = [
     {
         title: "Mercado Pago",
         description: "Fast, safe and no additional cost. Powered by Mercado Libre",
-        image: mercadoPago
+        image: mercadoPago,
+        width: 250,
+        height: 200
     },
     {
         title: "Credit cards",
         description: "We accept any credit card (Visa, Mastercard, Amex) from any bank",
-        image: tarjetaCredito
+        image: tarjetaCredito,
+        width: 200,
+        height: 200,
+        marginLeft: 20
+
     },
     {
         title: "Debit cards",
         description: "We accept any debit card from any bank",
-        image: tarjetaDebito
+        image: tarjetaDebito,
+        width: 200,
+        height: 200,
+        marginLeft: 20
     },
   
     {
         title: "Cash",
         description: "We accept cash payments",
-        image: efectivo
+        image: efectivo,
+        width: 200,
+        height: 200,
+        marginLeft: 20
     },
   ];
 
@@ -126,11 +138,12 @@ export default function PaymentCard() {
   return (
     <div className={classes.root}>
      {payments.map(payment => (
-      <Card className={classes.card} style={{width: 400, marginLeft: 30, marginRight: 30, marginTop: 10}}>
+      <Card className={classes.card} style={{width: 250, marginLeft: 30, marginRight: 30, marginTop: 10}}>
       <CardActionArea>
         <CardMedia
           className={classes.image}
           image={payment.image}
+          style={{width: payment.width, height: payment.height, 'margin-left': payment.marginLeft}}	
           title={payment.title}
         />
         <CardContent>
@@ -146,7 +159,6 @@ export default function PaymentCard() {
       </CardActions>
     </Card>
      ))}
-     <li></li>
      </div>
      
   );

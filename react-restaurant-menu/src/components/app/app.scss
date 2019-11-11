@@ -26,6 +26,12 @@ body {
   margin: 20px auto;
 }
 
+.appUser {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
 .order-container {
   margin: 20px 0;
 
@@ -48,7 +54,36 @@ body {
   }
 }
 
+.order-container-user {
+  margin: 20px 0;
+
+  .order-item-user {
+    &.-selected {
+      box-shadow: 0px 0px 1px 4px $secondary-color;
+    }
+
+    .item-title,
+    .item-info,
+    .item-desc {
+      color: $primary-color;
+    }
+    .type-image{
+      width: 25px;
+      height: 25px;
+      margin: 3px;
+      display: inline-block
+    }
+  }
+}
+
 .summary-container {
+  margin: 10px 0;
+  ul {
+    margin: 5px 0;
+  }
+}
+
+.summary-container-user {
   margin: 10px 0;
   ul {
     margin: 5px 0;

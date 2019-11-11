@@ -1,5 +1,5 @@
 import {
-    SignUp, Login, Register, Home, App, HomeUser, Categories, PaymentsHome, Courses, FeedbackHome, Menu
+    SignUp, Login, Register, Home, App, HomeUser, Categories, PaymentsHome, Courses, FeedbackHome, Menu, HomeAdmin, CoursesUser, AppUser
   } from "../../components/app/pages/index.js";
     
   export const routes = [
@@ -18,8 +18,22 @@ import {
     },
 
     {
+      path: "/menu-maker-user",
+      component: AppUser,
+      exact: true,
+      redirectTo: '/'
+    },
+
+    {
       path: "/course-maker",
       component: Courses,
+      exact: true,
+      redirectTo: '/'
+    },
+
+    {
+      path: "/course-maker-user",
+      component: CoursesUser,
       exact: true,
       redirectTo: '/'
     },
@@ -59,7 +73,14 @@ import {
       component: Login,
       exact: true,
       onlyUnauthenticated: true,
-      redirectTo: '/menu-maker'
+      redirectTo: '/'
+    },
+    {
+      path: "/homeAdmin",
+      component: HomeAdmin,
+      exact: true,
+      onlyUnauthenticated: true,
+      redirectTo: '/'
     },
   
     {

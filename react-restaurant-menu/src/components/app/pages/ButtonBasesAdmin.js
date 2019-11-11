@@ -9,7 +9,7 @@ import milanesas from '../../../images/milanesas.jpg';
 import { Link as RouterLink } from "react-router-dom";
 
 const linkToCourses = React.forwardRef((props, ref) => (
-  <RouterLink innerRef={ref} to="/course-maker-user" {...props} />
+  <RouterLink innerRef={ref} to="/course-maker" {...props} />
 ));
 
 const linkToPayments = React.forwardRef((props, ref) => (
@@ -21,7 +21,7 @@ const linkToFeedback = React.forwardRef((props, ref) => (
 ));
 
 const linkToSetMenu = React.forwardRef((props, ref) =>
-  <RouterLink innerRef={ref} to="/show-menu" {...props} />
+  <RouterLink innerRef={ref} to="/menu-maker" {...props} />
 );
 
 const images = [
@@ -37,13 +37,7 @@ const images = [
     width: '50%',
     link: linkToSetMenu,
   },
-  {
-    url: hamburguesa,
-    title: 'Suggestions',
-    width: '50%',
-    link: linkToFeedback,
-  },
-
+ 
   {
     url: milanesas,
     title: 'Payment Methods',
@@ -127,7 +121,7 @@ const useStyles = makeStyles(theme => ({
 
 
 
-export default function ButtonBases() {
+export default function ButtonBasesAdmin() {
   const classes = useStyles();
  
 
