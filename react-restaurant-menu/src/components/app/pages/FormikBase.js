@@ -2,26 +2,18 @@ import React from 'react';
 import { Formik, Field, Form } from 'formik';
 import { Component } from 'react';
 import superagent from 'superagent';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
 import "./styles.scss"
-
-const listOfMessages = [];
-
-/* TODO NOE. HABRIA QUE CAMBIAR LOS ESTILOS DE LOS BOTONES */
 
 class FormikBase extends Component{
     constructor (props) {
       super(props);
       this.state = {
-       //listOfMessages: [],
         name: '',
         message: ''
       }
     }
 
     submitFeedback (values) {
-        //console.log("VALUES", values)
       let userData = JSON.stringify({
           "name": values.name,
           "message": values.message
@@ -69,7 +61,5 @@ render () {
       )
     }
 }
-
-
 
 export default FormikBase;

@@ -11,7 +11,6 @@ export default class CoursesUser extends Component {
       course: "0",
       summary: false
     }
-    console.log("Entro ACAAAA")
   }
 
   handleCourse = (course = 0) => {
@@ -24,7 +23,6 @@ export default class CoursesUser extends Component {
   }
 
   render() {
-    console.log("Entro a renderizar para el usuario")
     return (
       <main className="app">
         <div>

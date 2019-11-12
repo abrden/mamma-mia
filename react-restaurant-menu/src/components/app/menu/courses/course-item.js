@@ -28,17 +28,14 @@ export default class CourseItem extends Component {
   }
 
   handleTitleChange = evt => {
-    console.log(evt.target.value)
     this.setState({ htmlTitle: evt.target.value });
   };
 
   handleDescriptionChange = evt => {
-    console.log(evt.target.value)
     this.setState({ htmlDescription: evt.target.value });
   };
 
   handlePriceChange = evt => {
-    console.log(evt.target.value)
     this.setState({ htmlPrice: evt.target.value });
   };
 

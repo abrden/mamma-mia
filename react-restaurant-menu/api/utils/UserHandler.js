@@ -21,7 +21,6 @@ class UserHandler {
 	static getComments() {
 		let comments = fs.readFileSync(FEEDBACKS_DIR);
 		let commentsJson = JSON.parse(comments);
-		//console.log("COMMENTS JSON", commentsJson)
 		return commentsJson;
 	}
 

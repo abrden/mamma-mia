@@ -44,24 +44,6 @@ export default class CategoryView extends Component {
     else{
 
     }
- /*  var newCategories = [...this.props.name]
-
-    if (updatedCategory.deleted) 
-      newCategories.splice(updatedCategory.categoryID,1)
-    else if (newCategories.length-1 < updatedCategory.categoryID)
-      newCategories.push(updatedCategory.html);
-    else
-      alert(updatedCategory);
-      newCategories[updatedCategory.categoryID] = updatedCategory.html
-
-    console.log("categories after anything: " + newCategories) // Array of categories is updated up to this point
-    this.setState({ categoriesList: newCategories });         // However, state is never updated here (TODO: CHECK THIS)
-    console.log("VIEW", this.state)
-    console.log("NEW CATEGORIES", newCategories)
-    this.setState(newCategories);
-    this.state = newCategories
-    console.log("STATE DESPUES DE SETEAR ESTADO NUEVO", this.state)
-*/
   }
 
   render() {

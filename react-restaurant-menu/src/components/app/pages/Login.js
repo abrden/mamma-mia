@@ -55,7 +55,6 @@ class Login extends Component {
   }
 
   loginUser = () => {
-    console.log('entre aca');
       let userData = JSON.stringify({
           "email": this.state.email,
           "password": this.state.password
@@ -66,7 +65,6 @@ class Login extends Component {
            .set('Content-Type','application/json')
            .send(userData)
            .end((error,response) => {
-             console.log("REsponse login", response)
              console.log(error)
             if (error) {
               this.setState({ loginMessage : response.text, openSnackbar : true });
@@ -74,9 +72,7 @@ class Login extends Component {
               this.setState({ loggedIn : true, loginMessage : response.text, openSnackbar : true, isAdministrator : true});
             }
             if(response.status == "200"){
-              //console.log("Entro a setear es verdadero")
               this.state.isAdministrator = true;
-              //console.log("El estado del login es", this.state.isAdministrator)
             }
        })
   }
@@ -106,8 +102,6 @@ class Login extends Component {
         {this.renderRedirect()}
         
         <form className="demoForm" style={{marginTop: 70}} onSubmit={this.handleSubmit}>
-          {/* <h2>Iniciar Sesión</h2> */}
-          
           <div>
             <Form.Group controlId="email">
               <TextField

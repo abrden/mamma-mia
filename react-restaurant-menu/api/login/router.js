@@ -85,7 +85,6 @@ router.route('/deleteCourse').post((request, response) => {
 
 router.route('/saveMenu').post((request, response) => {
     let menu = request.body.newMenu;
-    console.log(menu);
     let result = UserHandler.saveMenu(menu);
     response.status(result['status']).send({ message:result['message']});
 });

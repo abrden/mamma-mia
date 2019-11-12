@@ -2,8 +2,6 @@ import React, { Component } from "react"
 import getCourseItems from "../../../../utils/courseItem"
 import CourseViewUser from "./course-view-user"
 import Grid from "@material-ui/core/Grid"
-import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
 import superagent from 'superagent';
 
 export default class CourseContainerUser extends Component {
