@@ -51,7 +51,7 @@ export default class CourseItem extends Component {
         description : this.state.htmlDescription.replace("<br>",""),
         price       : this.state.htmlPrice.replace("<br>",""),
         title       : this.state.htmlTitle.replace("<br>",""),
-        type        : []
+        type        : this.state.itemType
       }
       superagent
         .post('http://localhost:9000/login/login/saveCourse')
@@ -85,7 +85,7 @@ export default class CourseItem extends Component {
           console.log(response)
           console.log(error)
       })
-    this.setState({ deleted: true }, /*this.updateCategoriesList*/);
+    this.setState({ deleted: true });
   }
 
   render() {
@@ -100,7 +100,7 @@ export default class CourseItem extends Component {
           <label>Price: $<ContentEditable className={!this.state.editable ? "" : "editable"} html={this.state.htmlPrice.toString()} disabled={!this.state.editable} onChange={this.handlePriceChange} /></label>
           </div>
           <p value={this.state.htmlPrice} onChange={this.handlePriceChange} /> 
-          <CourseFoodType editable={this.state.editable} itemType={this.props.itemType} ></CourseFoodType>
+          <CourseFoodType editable={this.state.editable} itemType={this.props.itemType} />
         </CardContent>
         <CardActions>
           <Button variant="contained" size="small" color="default" onClick={this.toggleEditable}>
