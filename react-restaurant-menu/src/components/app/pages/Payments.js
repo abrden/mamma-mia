@@ -11,15 +11,6 @@ import tarjetaCredito from '../../../images/tarjetas.jpg';
 import tarjetaDebito from '../../../images/tarjetaDebito.jpg';
 import efectivo from '../../../images/efectivo3.jpg';
 
-/* const useStyles = makeStyles({
-  card: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-}); */
-
 const useStyles = makeStyles(theme => ({
     root: {
       display: 'flex',
@@ -29,7 +20,6 @@ const useStyles = makeStyles(theme => ({
     },
     image: {
       position: 'relative',
-      //height: 100,
       [theme.breakpoints.down('xs')]: {
         width: 50,
         height: 50,
@@ -139,7 +129,6 @@ export default function PaymentCard() {
     <div className={classes.root}>
      {payments.map(payment => (
       <Card className={classes.card} style={{width: 250, marginLeft: 30, marginRight: 30, marginTop: 10}}>
-      <CardActionArea>
         <CardMedia
           className={classes.image}
           image={payment.image}
@@ -154,7 +143,6 @@ export default function PaymentCard() {
             {payment.description}
           </Typography>
         </CardContent>
-      </CardActionArea>
       <CardActions>
       </CardActions>
     </Card>

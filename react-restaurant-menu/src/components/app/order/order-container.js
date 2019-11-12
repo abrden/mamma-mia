@@ -103,12 +103,18 @@ export default class OrderContainer extends Component {
       return (
         <div className="summary-container">
           <OrderSummary selectedItems={this.state.selectedItems} />
-          <Button className="button default" variant="contained" size="small" color="default" onClick={this.handleSaveMenu}>
-              <SaveIcon/> Save Menu
-          </Button>
-          <Button className="button default" variant="contained" size="small" color="default" onClick={this.handleChangeOrder}>
-              <EditIcon/> Change Menu
-          </Button>
+          <Grid container spacing={6}>
+            <Grid item xs={4}>
+              <Button className="button default" variant="contained" size="large" color="default" onClick={this.handleSaveMenu}>
+                <SaveIcon/> Save Menu
+              </Button>
+            </Grid>
+            <Grid item xs={4}>
+              <Button className="button default" variant="contained" size="large" color="default" onClick={this.handleChangeOrder}>
+                <EditIcon/> Change Menu
+              </Button>
+            </Grid>
+          </Grid>
         </div>
       )
     } else {
