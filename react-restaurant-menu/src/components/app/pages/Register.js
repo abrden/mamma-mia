@@ -183,7 +183,7 @@ class Register extends Component {
             <p></p>
 
             <div className = {`form-group ${this.errorClass(this.state.formErrors.email)}`}>
-              <Form.Group controlId = "email" bsSize = "large">
+              <Form.Group controlId = "email">
                 <TextField
                   id = "outlined-adornment-weight"
                   variant = "outlined"
@@ -197,7 +197,7 @@ class Register extends Component {
             <p></p>
 
             <div className = {`form-group ${this.errorClass(this.state.formErrors.password)}`}>
-            <Form.Group controlId = "password" bsSize = "large">
+            <Form.Group controlId = "password">
               <TextField
                 variant = "outlined"
                 type = {this.state.showPassword ? 'text' : 'password'}
@@ -224,7 +224,7 @@ class Register extends Component {
             <p></p>
 
             <div className={`form-group ${this.errorClass(this.state.formErrors.confirmPassword)}`}>
-            <Form.Group controlId="password" bsSize="large">
+            <Form.Group controlId="password">
               <TextField
                 variant="outlined"
                 type={this.state.showConfirmPassword ? 'text' : 'password'}

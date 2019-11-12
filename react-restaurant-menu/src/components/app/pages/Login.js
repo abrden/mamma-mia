@@ -109,7 +109,7 @@ class Login extends Component {
           {/* <h2>Iniciar Sesión</h2> */}
           
           <div>
-            <Form.Group controlId="email" bsSize="large">
+            <Form.Group controlId="email">
               <TextField
                 id="outlined-adornment-weight"
                 variant="outlined"
@@ -123,7 +123,7 @@ class Login extends Component {
           <p></p>
 
           <div>
-          <Form.Group controlId="password" bsSize="large">
+          <Form.Group controlId="password">
             <TextField
               variant="outlined"
               type={this.state.showPassword ? 'text' : 'password'}
