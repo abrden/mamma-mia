@@ -21,7 +21,6 @@ class UserHandler {
 	static getComments() {
 		let comments = fs.readFileSync(FEEDBACKS_DIR);
 		let commentsJson = JSON.parse(comments);
-		//console.log("COMMENTS JSON", commentsJson)
 		return commentsJson;
 	}
 
@@ -65,11 +64,7 @@ class UserHandler {
 	}
 
 	static saveMessage(name, message) {
-	/* 	if(message === ''){
-			return { "status": 422, "message": "El usuario ya está registrado." };
-		} */
 		let messagesJson = this.getComments();
-		//let hashedPassword = this.hashPassword(password);
 
         messagesJson.push({ "name": name, "message": message })
         fs.writeFileSync(FEEDBACKS_DIR, JSON.stringify(messagesJson));

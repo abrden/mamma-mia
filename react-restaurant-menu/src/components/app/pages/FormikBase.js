@@ -3,25 +3,21 @@ import { Formik, Field, Form } from 'formik';
 import { Component } from 'react';
 import superagent from 'superagent';
 import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
+import Snackbar from '@material-ui/core/Snackbar';
 import "./styles.scss"
 
-const listOfMessages = [];
-
-/* TODO NOE. HABRIA QUE CAMBIAR LOS ESTILOS DE LOS BOTONES */
 
 class FormikBase extends Component{
     constructor (props) {
       super(props);
       this.state = {
-       //listOfMessages: [],
         name: '',
-        message: ''
+        message: '',
+        openSnackbar: false
       }
     }
 
     submitFeedback (values) {
-        //console.log("VALUES", values)
       let userData = JSON.stringify({
           "name": values.name,
           "message": values.message
@@ -33,16 +29,23 @@ class FormikBase extends Component{
             .end((error,response) => {
               if (response.status == 200){
                 alert(response.text)
+                this.setState({ registerMessage : response.text, openSnackbar : true });
               }
               console.log(response)
               console.log(error)
         })
       }
 
+      hideSnackbar = () => {
+        this.setState({
+          openSnackbar : false
+        })
+      }
+
 render () {
     return (
       <div>
-        <h1>Suggestions</h1>
+        <h2 style={{marginLeft: 450}}>Leave your message here</h2>
         <Formik
           initialValues={{
             name: '',
@@ -55,16 +58,35 @@ render () {
           }}
           render={() => (
             <Form>
-              <label htmlFor="firstName">Name</label>
-              <Field name="name" placeholder="Jane" />
-    
-              <label htmlFor="lastName">Message</label>
-              <Field name="message" placeholder="Message" />
-    
-              <button type="submit">Submit</button>
+              <div style={{marginLeft: 450, marginTop: 50}}>
+                <label htmlFor="firstName" style={{marginRight: 20}}>Name</label>
+                <Field name="name" placeholder="Name" />
+              </div>
+              
+              <div style={{marginRight: 30, marginLeft: 450, marginTop: 40}}>
+                <label htmlFor="lastName" style={{marginRight: 20}} >Message</label>
+                <Field rows="60" name="message" placeholder="Message" row="50"/>
+                {/* <textarea rows="60" name="message" placeholder="Message"/> */}
+              </div>
+              {/* <button type="submit">Submit</button> */}
+              <Button className="button default"
+                    type="submit" 
+                    variant="contained" 
+                    size="small" 
+                    color="default" 
+                    style={{marginLeft: 450, marginTop: 40}}
+                    >Submit
+            </Button>
+              
             </Form>
+            
           )}
+          
         />
+        <Snackbar
+                message = "Thanks for your message! :)"
+                open = {this.state.openSnackbar}
+                onClick = {this.hideSnackbar} />
       </div>
       )
     }
