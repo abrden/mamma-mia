@@ -1,0 +1,154 @@
+@import-normalize;
+
+/* Variables */
+$primary-color: #485366;
+$secondary-color: #f29f3a;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: left;
+  color: $primary-color;
+}
+
+.-hide {
+  display: none !important;
+}
+
+/* Containers */
+.app {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.appUser {
+  width: 90%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.order-container {
+  margin: 20px 0;
+
+  .order-item {
+    &.-selected {
+      box-shadow: 0px 0px 1px 4px $secondary-color;
+    }
+
+    .item-title,
+    .item-info,
+    .item-desc {
+      color: $primary-color;
+    }
+    .type-image{
+      width: 25px;
+      height: 25px;
+      margin: 3px;
+      display: inline-block
+    }
+  }
+}
+
+.order-container-user {
+  margin: 20px 0;
+
+  .order-item-user {
+    &.-selected {
+      box-shadow: 0px 0px 1px 4px $secondary-color;
+    }
+
+    .item-title,
+    .item-info,
+    .item-desc {
+      color: $primary-color;
+    }
+    .type-image{
+      width: 25px;
+      height: 25px;
+      margin: 3px;
+      display: inline-block
+    }
+  }
+}
+
+.summary-container {
+  margin: 10px 0;
+  ul {
+    margin: 5px 0;
+  }
+}
+
+.summary-container-user {
+  margin: 10px 0;
+  ul {
+    margin: 5px 0;
+  }
+}
+
+.steps-container {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 10px auto;
+}
+
+/* Typography */
+.title {
+  font-family: inherit;
+  font-weight: 400;
+  color: $primary-color;
+  margin: 0;
+}
+
+.editable {
+  border-style: solid;
+  border-color: #f8c98e;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Buttons */
+.button {
+  font-size: inherit;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+
+  &.steps {
+    color: $primary-color;
+    background: transparent;
+    border: none;
+    padding: 5px 2px;
+    margin-right: 15px;
+
+    &.-active {
+      border-bottom: 5px solid $secondary-color;
+    }
+
+    &.-disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+
+  &.default {
+    color: #fff;
+    background: $secondary-color;
+    padding: 10px;
+    margin-top: 20px;
+    transition: all 0.15s ease-in;
+    border: 1px solid $secondary-color;
+    border-radius: 2px;
+    ¨ &:hover {
+      color: $secondary-color;
+      background: transparent;
+    }
+  }
+}
