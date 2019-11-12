@@ -64,11 +64,7 @@ class UserHandler {
 	}
 
 	static saveMessage(name, message) {
-	/* 	if(message === ''){
-			return { "status": 422, "message": "El usuario ya está registrado." };
-		} */
 		let messagesJson = this.getComments();
-		//let hashedPassword = this.hashPassword(password);
 
         messagesJson.push({ "name": name, "message": message })
         fs.writeFileSync(FEEDBACKS_DIR, JSON.stringify(messagesJson));
