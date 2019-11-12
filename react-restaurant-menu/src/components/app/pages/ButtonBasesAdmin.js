@@ -16,8 +16,8 @@ const linkToPayments = React.forwardRef((props, ref) => (
   <RouterLink innerRef={ref} to="/payments" {...props} />
 ));
 
-const linkToFeedback = React.forwardRef((props, ref) => (
-  <RouterLink innerRef={ref} to="/feedback" {...props} />
+const linkToCategories = React.forwardRef((props, ref) => (
+  <RouterLink innerRef={ref} to="/categories-maker" {...props} />
 ));
 
 const linkToSetMenu = React.forwardRef((props, ref) =>
@@ -37,7 +37,13 @@ const images = [
     width: '50%',
     link: linkToSetMenu,
   },
- 
+  {
+    url: hamburguesa,
+    title: 'Categories',
+    width: '50%',
+    link: linkToCategories,
+  },
+
   {
     url: milanesas,
     title: 'Payment Methods',
