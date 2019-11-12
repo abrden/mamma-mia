@@ -4,7 +4,7 @@
 /node_modules
 package-lock.json
 src/assets/data/*
-data/saved_messages/*
+/data/saved_messages/*
 
 /.pnp
 .pnp.js
