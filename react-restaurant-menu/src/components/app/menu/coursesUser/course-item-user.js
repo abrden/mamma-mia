@@ -1,15 +1,10 @@
 import React, { Component } from "react"
 import Card from "@material-ui/core/Card"
 import CardContent from "@material-ui/core/CardContent"
-import CardMedia from "@material-ui/core/CardMedia"
 import CardActions from '@material-ui/core/CardActions';
-import DeleteIcon from '@material-ui/icons/Delete';
-import EditIcon from '@material-ui/icons/Edit';
 import ContentEditable from 'react-contenteditable'
-import Button from '@material-ui/core/Button';
-import GlutenFree from "../../../../images/gluten_free.png"
-import Veggie from "../../../../images/veggie.png"
 import superagent from 'superagent';
+import CourseFoodType from "../courses/course-food-type"
 
 export default class CourseItemUser extends Component {
   constructor(props) {
@@ -100,26 +95,11 @@ export default class CourseItemUser extends Component {
           <p value={this.state.htmlDescription} onChange={this.handleDescriptionChange}/>
           <ContentEditable className={!this.state.editable ? "" : "editable"} html={this.state.htmlPrice.toString()} disabled={!this.state.editable} onChange={this.handlePriceChange} />
           <p value={this.state.htmlPrice} onChange={this.handlePriceChange}/>
-          
-            {
-              this.props.itemType.map((type,index) => {
-                return (
-                  <CardMedia className="type-image" component="img"	alt={`${type}`}	
-                  image={`${getImagePathFromType(type)}`}	
-                  style={{width: 25, height: 25}}
-                  key={index}/>
-                )
-              })
-            }
+          <CourseFoodType editable={this.state.editable} itemType={this.props.itemType} />
         </CardContent>
         <CardActions>
         </CardActions>
       </Card>
     )
   }
-}
-
-function getImagePathFromType(type){
-  if (type === "veggie") return Veggie
-  if (type === "gluten_free") return GlutenFree
 }
